@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jupyter Book Tutorial &#8212; Title</title>
   
   
@@ -376,7 +375,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="jupyter-book-tutorial">
+  <div class="tex2jax_ignore mathjax_ignore section" id="jupyter-book-tutorial">
 <h1>Jupyter Book Tutorial<a class="headerlink" href="#jupyter-book-tutorial" title="Permalink to this headline">#</a></h1>
 <p>(Last updated: June 9, 2023)</p>
 <p>In this tutorial, we will teach you how to create a Jupyter book and deploy it online.
@@ -387,7 +386,7 @@ All the content on this website is licensed under a <a class="reference external
 <p>This tutorial only mentions the basics.
 For more advanced usage of Jupyter Book (e.g., using this special content block, editing the configuration file <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>, editing the table of content file <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>, etc.), check <a class="reference external" href="https://jupyterbook.org/en/stable/content/index.html">the Jupyter Book documentation</a> for more information.</p>
 </div>
-<section id="table-of-contents">
+<div class="section" id="table-of-contents">
 <h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><span class="xref myst">Prerequisites</span></p></li>
@@ -399,41 +398,41 @@ For more advanced usage of Jupyter Book (e.g., using this special content block,
 <li><p><span class="xref myst">Update the website content</span></p></li>
 <li><p><span class="xref myst">Troubleshooting</span></p></li>
 </ul>
-</section>
-<section id="prerequisites">
+</div>
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p><a name="pre"></a></p>
 <p>Please make sure you have all the prerequisites ready before continuing this tutorial.</p>
-<section id="register-a-github-account">
+<div class="section" id="register-a-github-account">
 <h3>Register a GitHub account<a class="headerlink" href="#register-a-github-account" title="Permalink to this headline">#</a></h3>
 <p>We will use <a class="reference external" href="https://pages.github.com">GitHub Pages</a> to deploy your compiled book, which means that you need to <a class="reference external" href="https://github.com/signup">register a GitHub account</a>.</p>
-</section>
-<section id="create-a-github-personal-access-token">
+</div>
+<div class="section" id="create-a-github-personal-access-token">
 <h3>Create a GitHub personal access token<a class="headerlink" href="#create-a-github-personal-access-token" title="Permalink to this headline">#</a></h3>
 <p>GitHub has a new policy that you can no longer use your account password to push file changes.
 You must <a class="reference external" href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">create a personal access token</a> and use the token when pushing changes to a GitHub repository.
 You also need to give the token proper access permissions/scopes, as indicated in the following image:</p>
 <p><img alt="token_scope" src="../_images/token_scope.png" /></p>
-</section>
-<section id="install-the-environment-to-run-jupyter-notebook">
+</div>
+<div class="section" id="install-the-environment-to-run-jupyter-notebook">
 <h3>Install the environment to run Jupyter notebook<a class="headerlink" href="#install-the-environment-to-run-jupyter-notebook" title="Permalink to this headline">#</a></h3>
 <p>We assume that you have installed the environment that can edit and run Jupyter Notebook files.
 If you have not done so, check the <a class="reference external" href="https://jupyter.org">Jupyter website</a> for how to install the user interface and environment.</p>
-</section>
-<section id="install-git-and-git-bash-windows-only">
+</div>
+<div class="section" id="install-git-and-git-bash-windows-only">
 <h3>Install git and Git Bash (Windows only)<a class="headerlink" href="#install-git-and-git-bash-windows-only" title="Permalink to this headline">#</a></h3>
 <p>You need a terminal (e.g., <a class="reference external" href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bash</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Z_shell">Zsh</a>) to work with Jupyter Book.
 If you are on Windows, install <a class="reference external" href="https://git-scm.com/">the git tool</a>, which comes with a terminal called <code class="docutils literal notranslate"><span class="pre">Git</span> <span class="pre">Bash</span></code>.
 If you are on Mac or Linux, the git tool is already installed, so you can just open the terminal and start typing commands.</p>
-</section>
-<section id="familiarize-yourself-with-git">
+</div>
+<div class="section" id="familiarize-yourself-with-git">
 <h3>Familiarize yourself with git<a class="headerlink" href="#familiarize-yourself-with-git" title="Permalink to this headline">#</a></h3>
 <p>You will need to use <code class="docutils literal notranslate"><span class="pre">git</span></code> to work with the GitHub Pages, which requires some basic understanding of using <code class="docutils literal notranslate"><span class="pre">git</span></code>.
 If you are new to this idea, check <a class="reference external" href="https://github.com/git-guides">the git guide</a>.
 Also, here is <a class="reference external" href="https://www.youtube.com/watch?v=USjZcfj8yxE">a 15-minute Git tutorial video</a> that covers what you need for this course.</p>
-</section>
-</section>
-<section id="step-1-install-conda">
+</div>
+</div>
+<div class="section" id="step-1-install-conda">
 <h2>Step 1: Install conda<a class="headerlink" href="#step-1-install-conda" title="Permalink to this headline">#</a></h2>
 <p><a name="s1"></a></p>
 <p>The first step is installing the conda virtual environment using <a class="reference external" href="https://docs.conda.io/en/main/miniconda.html">miniconda</a> or <a class="reference external" href="https://www.anaconda.com/">anaconda</a>.
@@ -453,14 +452,14 @@ If you already have the conda environment ready on your machine, you can skip th
 When running the installation, <strong>make sure that you need to tick the box to allow the installer to set the system environment path for conda</strong>.
 Otherwise, your terminal will not be able to find the conda command.</p>
 </div>
-</section>
-<section id="step-2-install-jupyter-book">
+</div>
+<div class="section" id="step-2-install-jupyter-book">
 <h2>Step 2: Install Jupyter Book<a class="headerlink" href="#step-2-install-jupyter-book" title="Permalink to this headline">#</a></h2>
 <p><a name="s2"></a></p>
 <p>In this step, you will install the Jupyter Book package.
 Notice that there are two sections in this step.
 One for Mac/Linux users, and another one for Windows users.</p>
-<section id="for-mac-and-linux-to-install-jupyter-book">
+<div class="section" id="for-mac-and-linux-to-install-jupyter-book">
 <h3>For Mac and Linux to install Jupyter Book<a class="headerlink" href="#for-mac-and-linux-to-install-jupyter-book" title="Permalink to this headline">#</a></h3>
 <p>Now, create a new conda environment using the command below.
 We need to install Jupyter Book in the conda environment.</p>
@@ -489,8 +488,8 @@ Having no error messages means that Jupyter Book is installed correctly.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter-book<span class="w"> </span>--help
 </pre></div>
 </div>
-</section>
-<section id="for-windows-to-install-jupyter-book">
+</div>
+<div class="section" id="for-windows-to-install-jupyter-book">
 <h3>For Windows to install Jupyter Book<a class="headerlink" href="#for-windows-to-install-jupyter-book" title="Permalink to this headline">#</a></h3>
 <p>Windows has a known problem that the conda installation for Jupyter Book can be pending forever.
 We have figured out a specific solution for this.
@@ -537,9 +536,9 @@ Having no error messages means that Jupyter Book is installed correctly.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter-book<span class="w"> </span>--help
 </pre></div>
 </div>
-</section>
-</section>
-<section id="step-3-create-a-new-repository">
+</div>
+</div>
+<div class="section" id="step-3-create-a-new-repository">
 <h2>Step 3: Create a new repository<a class="headerlink" href="#step-3-create-a-new-repository" title="Permalink to this headline">#</a></h2>
 <p><a name="s3"></a></p>
 <p>Next, we need to create a new repository to host your website and code using this tutorial as the template.
@@ -576,8 +575,8 @@ Again, remember to use the correct repository name (i.e., replacing <code class=
 <p>Notice that you need to use a terminal to copy all the files (but not drag/drop or copy/paste files with the user interface).
 Otherwise, you will fail to copy the hidden files, such as the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> or <code class="docutils literal notranslate"><span class="pre">.gitmodules</span></code> files.</p>
 </div>
-</section>
-<section id="step-4-build-the-book-locally">
+</div>
+<div class="section" id="step-4-build-the-book-locally">
 <h2>Step 4: Build the book locally<a class="headerlink" href="#step-4-build-the-book-locally" title="Permalink to this headline">#</a></h2>
 <p><a name="s4"></a></p>
 <p>Now we are going to compile and build your book on your local machine.
@@ -605,8 +604,8 @@ You can then use your browser to open the files locally on your machine to view 
 You can also install a <a class="reference external" href="https://httpd.apache.org/">local Apache HTTP Server</a> to view the files since the html files are sometimes incorrectly displayed if opened using a browser.</p>
 <p>We also already set up the configuration file <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> and the table of content file <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> for you.
 For more information about how to edit them, check <a class="reference external" href="https://jupyterbook.org/en/stable/start/create.html">this documentation</a>.</p>
-</section>
-<section id="step-5-deploy-the-book-online">
+</div>
+<div class="section" id="step-5-deploy-the-book-online">
 <h2>Step 5: Deploy the book online<a class="headerlink" href="#step-5-deploy-the-book-online" title="Permalink to this headline">#</a></h2>
 <p><a name="s5"></a></p>
 <p>Now, we have the compiled website files ready, and we can move on to deploy the website.
@@ -652,16 +651,16 @@ You can check the “Actions” page to check the status.
 For example, here is the <a class="reference external" href="https://github.com/yenchiah/jupyter-book-template/actions">Actions page for our tutorial repository</a>.</p>
 <p>You now have the public URL for your website.
 More information about how to publish your book can be found on <a class="reference external" href="https://jupyterbook.org/en/stable/start/publish.html">this documentation</a>.</p>
-</section>
-<section id="update-the-website-content">
+</div>
+<div class="section" id="update-the-website-content">
 <h2>Update the website content<a class="headerlink" href="#update-the-website-content" title="Permalink to this headline">#</a></h2>
 <p><a name="update"></a></p>
 <p>Every time you build some new files (or updated files), you need to rebuild the book and push new changes to your GitHub repository.</p>
 <p>To update the content of your website, <strong>repeat step 4 and 5 without the package installation parts</strong>.
 Step 4 will rebuild the book, which means compiling/translating the notebook and markdown files into HTML/CSS/JavaScript files.
 Step 5 will push your new content to the GitHub repository and update the online content of your website.</p>
-</section>
-<section id="troubleshooting">
+</div>
+<div class="section" id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">#</a></h2>
 <p><a name="ts"></a></p>
 <p>Below we list some common errors and possible solutions.
@@ -691,8 +690,8 @@ You may be able to find solutions on Stack Overflow or other people’s blogs.</
 <li><p>Sometimes it will take a while for GitHub to update your page. Give it some time and check later. You can go to the “Actions” page in your GitHub repository to check the status.</p></li>
 <li><p>Your browser may have an old cache that does not reflect new changes. Search online about how to clear your browser cache. After cleaning the cache, check the website again.</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
