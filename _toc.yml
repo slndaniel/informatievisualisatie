@@ -3,6 +3,3 @@
 
 format: jb-book
 root: docs/data_story
-chapters:
-- file: docs/notebook
-- file: docs/home
