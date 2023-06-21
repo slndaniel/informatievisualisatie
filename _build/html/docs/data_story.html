@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eerste Markdown cell &#8212; Title</title>
+    <title>Is it a climate disaster? &#8212; Title</title>
   
   
   
@@ -144,7 +144,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Eerste Markdown cell
+                    Is it a climate disaster?
                 </a>
             </li>
         </ul>
@@ -352,7 +352,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -363,11 +365,25 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Eerste Markdown cell</h1>
+    <h1>Is it a climate disaster?</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Is it a climate disaster?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-and-preprocessing">Dataset and preprocessing</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perspective-one">Perspective one</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perspective-two">Perspective two</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perspective-three">Perspective three</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -377,16 +393,103 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="eerste-markdown-cell">
-<h1>Eerste Markdown cell<a class="headerlink" href="#eerste-markdown-cell" title="Permalink to this headline">#</a></h1>
-<p>(last updated: June 19, 2023)</p>
-<p>Test van Chris</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="is-it-a-climate-disaster">
+<h1>Is it a climate disaster?<a class="headerlink" href="#is-it-a-climate-disaster" title="Permalink to this headline">#</a></h1>
+<p>(last updated: June 21, 2023)</p>
+<p>repository: <a class="github reference external" href="https://github.com/slndaniel/informatievisualisatie/tree/main">slndaniel/informatievisualisatie</a></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="dataset-and-preprocessing">
+<h1>Dataset and preprocessing<a class="headerlink" href="#dataset-and-preprocessing" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+<span class="n">File</span> <span class="o">~</span>\<span class="n">miniconda3</span>\<span class="n">envs</span>\<span class="n">jupyterbook</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">seaborn</span>\<span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa: F401,F403</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">.palettes</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa: F401,F403</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">.relational</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa: F401,F403</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">.regression</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa: F401,F403</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">.categorical</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa: F401,F403</span>
+
+<span class="n">File</span> <span class="o">~</span>\<span class="n">miniconda3</span>\<span class="n">envs</span>\<span class="n">jupyterbook</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">seaborn</span>\<span class="n">relational</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">17</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span> <span class="nn">._oldcore</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">VectorPlotter</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">locator_to_legend_entries</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">adjust_legend_subtitles</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">_default_color</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="n">_deprecate_ci</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">._statistics</span> <span class="kn">import</span> <span class="n">EstimateAggregator</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="kn">from</span> <span class="nn">.axisgrid</span> <span class="kn">import</span> <span class="n">FacetGrid</span><span class="p">,</span> <span class="n">_facet_docs</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="kn">from</span> <span class="nn">._docstrings</span> <span class="kn">import</span> <span class="n">DocstringComponents</span><span class="p">,</span> <span class="n">_core_docs</span>
+
+<span class="n">File</span> <span class="o">~</span>\<span class="n">miniconda3</span>\<span class="n">envs</span>\<span class="n">jupyterbook</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">seaborn</span>\<span class="n">_statistics</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">31</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">31</span>     <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">gaussian_kde</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span>     <span class="n">_no_scipy</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+
+<span class="n">File</span> <span class="o">~</span>\<span class="n">miniconda3</span>\<span class="n">envs</span>\<span class="n">jupyterbook</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">scipy</span>\<span class="n">stats</span>\<span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">485</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="sd"> .. _statsrefmanual:</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">480</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">481</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">483</span> <span class="kn">from</span> <span class="nn">._warnings_errors</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ConstantInputWarning</span><span class="p">,</span> <span class="n">NearConstantInputWarning</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">484</span>                                <span class="n">DegenerateDataWarning</span><span class="p">,</span> <span class="n">FitError</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">485</span> <span class="kn">from</span> <span class="nn">._stats_py</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">    </span><span class="mi">486</span> <span class="kn">from</span> <span class="nn">._variation</span> <span class="kn">import</span> <span class="n">variation</span>
+<span class="g g-Whitespace">    </span><span class="mi">487</span> <span class="kn">from</span> <span class="nn">.distributions</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">File</span> <span class="o">~</span>\<span class="n">miniconda3</span>\<span class="n">envs</span>\<span class="n">jupyterbook</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">scipy</span>\<span class="n">stats</span>\<span class="n">_stats_py</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">46</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="kn">import</span> <span class="nn">scipy.special</span> <span class="k">as</span> <span class="nn">special</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span>
+<span class="ne">---&gt; </span><span class="mi">46</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">distributions</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_mstats_basic</span> <span class="k">as</span> <span class="n">mstats_basic</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="kn">from</span> <span class="nn">._stats_mstats_common</span> <span class="kn">import</span> <span class="p">(</span><span class="n">_find_repeats</span><span class="p">,</span> <span class="n">linregress</span><span class="p">,</span> <span class="n">theilslopes</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>                                    <span class="n">siegelslopes</span><span class="p">)</span>
+
+<span class="n">File</span> <span class="o">~</span>\<span class="n">miniconda3</span>\<span class="n">envs</span>\<span class="n">jupyterbook</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">scipy</span>\<span class="n">stats</span>\<span class="n">distributions</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">14</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_discrete_distns</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="kn">from</span> <span class="nn">._continuous_distns</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="ne">---&gt; </span><span class="mi">14</span> <span class="kn">from</span> <span class="nn">._levy_stable</span> <span class="kn">import</span> <span class="n">levy_stable</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">._discrete_distns</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span> <span class="nn">._entropy</span> <span class="kn">import</span> <span class="n">entropy</span>
+
+<span class="n">File</span> <span class="o">~</span>\<span class="n">miniconda3</span>\<span class="n">envs</span>\<span class="n">jupyterbook</span>\<span class="n">lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">scipy</span>\<span class="n">stats</span>\<span class="n">_levy_stable</span>\<span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">18</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span> <span class="nn">.._distn_infrastructure</span> <span class="kn">import</span> <span class="n">rv_continuous</span><span class="p">,</span> <span class="n">_ShapeInfo</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">.._continuous_distns</span> <span class="kn">import</span> <span class="n">uniform</span><span class="p">,</span> <span class="n">expon</span><span class="p">,</span> <span class="n">_norm_pdf</span><span class="p">,</span> <span class="n">_norm_cdf</span>
+<span class="ne">---&gt; </span><span class="mi">18</span> <span class="kn">from</span> <span class="nn">.levyst</span> <span class="kn">import</span> <span class="n">Nolan</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="kn">from</span> <span class="nn">scipy._lib.doccer</span> <span class="kn">import</span> <span class="n">inherit_docstring_from</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;levy_stable&quot;</span><span class="p">,</span> <span class="s2">&quot;levy_stable_gen&quot;</span><span class="p">,</span> <span class="s2">&quot;pdf_from_cf_with_fft&quot;</span><span class="p">]</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:398,</span> in <span class="ni">parent</span><span class="nt">(self)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -569,6 +672,115 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_temperature_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;new_temperature.csv&#39;</span><span class="p">)</span>
+<span class="n">new_temperature_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">new_temperature_data</span><span class="p">)</span>
+<span class="n">new_temperature_dataframe</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Area Code</th>
+      <th>Area</th>
+      <th>Months Code</th>
+      <th>Months</th>
+      <th>Element Code</th>
+      <th>Element</th>
+      <th>Unit</th>
+      <th>Year</th>
+      <th>Temperature</th>
+      <th>z-score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>Afghanistan</td>
+      <td>7001</td>
+      <td>January</td>
+      <td>7271</td>
+      <td>Temperature change</td>
+      <td>°C</td>
+      <td>1961</td>
+      <td>0.777</td>
+      <td>0.169300</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Afghanistan</td>
+      <td>7002</td>
+      <td>February</td>
+      <td>7271</td>
+      <td>Temperature change</td>
+      <td>°C</td>
+      <td>1961</td>
+      <td>-1.743</td>
+      <td>-0.700639</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>Afghanistan</td>
+      <td>7003</td>
+      <td>March</td>
+      <td>7271</td>
+      <td>Temperature change</td>
+      <td>°C</td>
+      <td>1961</td>
+      <td>0.516</td>
+      <td>0.123397</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>Afghanistan</td>
+      <td>7004</td>
+      <td>April</td>
+      <td>7271</td>
+      <td>Temperature change</td>
+      <td>°C</td>
+      <td>1961</td>
+      <td>-1.709</td>
+      <td>-1.543048</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>Afghanistan</td>
+      <td>7005</td>
+      <td>May</td>
+      <td>7271</td>
+      <td>Temperature change</td>
+      <td>°C</td>
+      <td>1961</td>
+      <td>1.412</td>
+      <td>0.541270</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">co2_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;CO2_emissions_cleaned.csv&#39;</span><span class="p">)</span>
 <span class="n">co2_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">co2_data</span><span class="p">)</span>
 <span class="n">co2_dataframe</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -635,6 +847,93 @@ document.write(`
       <td>Aruba</td>
       <td>1964</td>
       <td>11840.743</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">co2_dataframe</span><span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">co2_dataframe</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;country_code&#39;</span><span class="p">)[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">co2_dataframe</span><span class="p">[</span><span class="s1">&#39;Std&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">co2_dataframe</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;country_code&#39;</span><span class="p">)[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;std&#39;</span><span class="p">)</span>
+<span class="n">co2_dataframe</span><span class="p">[</span><span class="s1">&#39;z-score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">co2_dataframe</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">co2_dataframe</span><span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="n">co2_dataframe</span><span class="p">[</span><span class="s1">&#39;Std&#39;</span><span class="p">]</span>
+
+<span class="n">new_co2_dataframe</span> <span class="o">=</span> <span class="n">co2_dataframe</span><span class="p">[[</span><span class="s1">&#39;country_code&#39;</span><span class="p">,</span> <span class="s1">&#39;country_name&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;z-score&#39;</span><span class="p">]]</span>
+
+<span class="n">new_co2_dataframe</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;new_co2.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">new_co2_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;new_co2.csv&#39;</span><span class="p">)</span>
+<span class="n">new_co2_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">new_co2_data</span><span class="p">)</span>
+<span class="n">new_co2_dataframe</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country_code</th>
+      <th>country_name</th>
+      <th>year</th>
+      <th>value</th>
+      <th>z-score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ABW</td>
+      <td>Aruba</td>
+      <td>1960</td>
+      <td>11092.675</td>
+      <td>0.769185</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ABW</td>
+      <td>Aruba</td>
+      <td>1961</td>
+      <td>11576.719</td>
+      <td>0.850040</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ABW</td>
+      <td>Aruba</td>
+      <td>1962</td>
+      <td>12713.489</td>
+      <td>1.039926</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ABW</td>
+      <td>Aruba</td>
+      <td>1963</td>
+      <td>12178.107</td>
+      <td>0.950496</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ABW</td>
+      <td>Aruba</td>
+      <td>1964</td>
+      <td>11840.743</td>
+      <td>0.894143</td>
     </tr>
   </tbody>
 </table>
@@ -818,6 +1117,95 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_transposed</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">methane_dataframe</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">],</span> <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;Methane value&#39;</span><span class="p">)</span>
+<span class="n">df_transposed</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_transposed</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df_transposed</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+<span class="n">df_transposed</span> <span class="o">=</span> <span class="n">df_transposed</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">])</span>
+
+<span class="n">df_transposed</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;new_methane.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+
+<span class="n">new_methane_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;new_methane.csv&#39;</span><span class="p">)</span>
+<span class="n">new_methane_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">new_methane_data</span><span class="p">)</span>
+
+<span class="n">new_methane_dataframe</span><span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_methane_dataframe</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">)[</span><span class="s1">&#39;Methane value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">new_methane_dataframe</span><span class="p">[</span><span class="s1">&#39;Std&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_methane_dataframe</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">)[</span><span class="s1">&#39;Methane value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;std&#39;</span><span class="p">)</span>
+<span class="n">new_methane_dataframe</span><span class="p">[</span><span class="s1">&#39;z-score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">new_methane_dataframe</span><span class="p">[</span><span class="s1">&#39;Methane value&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">new_methane_dataframe</span><span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="n">new_methane_dataframe</span><span class="p">[</span><span class="s1">&#39;Std&#39;</span><span class="p">]</span>
+
+<span class="n">new_methane_dataframe</span> <span class="o">=</span> <span class="n">new_methane_dataframe</span><span class="p">[[</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Methane value&#39;</span><span class="p">,</span> <span class="s1">&#39;z-score&#39;</span><span class="p">]]</span>
+
+<span class="n">new_methane_dataframe</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;new_methane.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+
+<span class="n">new_methane_dataframe</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country</th>
+      <th>Year</th>
+      <th>Methane value</th>
+      <th>z-score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>1990.0</td>
+      <td>8.97</td>
+      <td>-0.722564</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Afghanistan</td>
+      <td>1991.0</td>
+      <td>9.07</td>
+      <td>-0.718711</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Afghanistan</td>
+      <td>1992.0</td>
+      <td>8.99</td>
+      <td>-0.721793</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Afghanistan</td>
+      <td>1993.0</td>
+      <td>8.89</td>
+      <td>-0.725647</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Afghanistan</td>
+      <td>1994.0</td>
+      <td>8.96</td>
+      <td>-0.722950</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elnino_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ElNino_LaNina_cleaned.csv&#39;</span><span class="p">)</span>
 <span class="n">elnino_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">elnino_data</span><span class="p">)</span>
 <span class="n">elnino_dataframe</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -945,9 +1333,262 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Daniel</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_elnino_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ElNino_LaNina_cleaned.csv&#39;</span><span class="p">)</span>
+<span class="n">new_elnino_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">new_elnino_data</span><span class="p">)</span>
 
-<span class="n">CO2_elnino_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;CO2_merge_elnino_lanina.csv&#39;</span><span class="p">)</span>
+<span class="n">z_scores</span> <span class="o">=</span> <span class="n">new_elnino_dataframe</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="p">(</span><span class="n">row</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">row</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">row</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">new_elnino_dataframe</span><span class="p">[</span><span class="s1">&#39;Mean_Value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_elnino_dataframe</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">new_elnino_dataframe</span> <span class="o">=</span> <span class="n">new_elnino_dataframe</span><span class="p">[[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;Mean_Value&#39;</span><span class="p">]]</span>
+
+<span class="n">new_elnino_dataframe</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;new_elnino_lanina.csv&#39;</span><span class="p">)</span>
+
+<span class="n">new_elnino_dataframe</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>Mean_Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1950</td>
+      <td>-0.283333</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1951</td>
+      <td>0.608333</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1952</td>
+      <td>0.350000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1953</td>
+      <td>0.375000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1954</td>
+      <td>-0.733333</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="perspective-one">
+<h1>Perspective one<a class="headerlink" href="#perspective-one" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">co2_china</span> <span class="o">=</span> <span class="n">new_co2_dataframe</span><span class="p">[(</span><span class="n">new_co2_dataframe</span><span class="p">[</span><span class="s1">&#39;country_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;China&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">new_co2_dataframe</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1960</span><span class="p">,</span> <span class="mi">2023</span><span class="p">))]</span>
+<span class="n">methane_china</span> <span class="o">=</span> <span class="n">new_methane_dataframe</span><span class="p">[(</span><span class="n">new_methane_dataframe</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;China&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">new_methane_dataframe</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1960</span><span class="p">,</span> <span class="mi">2023</span><span class="p">))]</span>
+<span class="n">temperature_china</span> <span class="o">=</span> <span class="n">new_temperature_dataframe</span><span class="p">[(</span><span class="n">new_temperature_dataframe</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;China&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">new_temperature_dataframe</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1960</span><span class="p">,</span> <span class="mi">2023</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">new_temperature_dataframe</span><span class="p">[</span><span class="s1">&#39;Months&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Meteorological year&#39;</span><span class="p">)]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">co2_china</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">co2_china</span><span class="p">[</span><span class="s1">&#39;z-score&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;CO2&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">methane_china</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">methane_china</span><span class="p">[</span><span class="s1">&#39;z-score&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Methane&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temperature_china</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">temperature_china</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Temperature&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Z-score&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Z-scores of CO2 and methane emissions and temperature change in China&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2fd38b10b5c3efa472d0c2aebe0971ae0cbfcf6e914441b75c8b7b2eefe375f0.png" src="../_images/2fd38b10b5c3efa472d0c2aebe0971ae0cbfcf6e914441b75c8b7b2eefe375f0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trace</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">co2_china</span><span class="p">[</span><span class="s1">&#39;z-score&#39;</span><span class="p">],</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">methane_china</span><span class="p">[</span><span class="s1">&#39;z-score&#39;</span><span class="p">],</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span>
+    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">size</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">temperature_china</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="n">sizemode</span><span class="o">=</span><span class="s1">&#39;diameter&#39;</span><span class="p">,</span>
+        <span class="n">sizeref</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">temperature_china</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">],</span>
+        <span class="n">colorscale</span><span class="o">=</span><span class="s1">&#39;Viridis&#39;</span><span class="p">,</span>
+        <span class="n">showscale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">cmin</span><span class="o">=</span><span class="n">temperature_china</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+        <span class="n">cmax</span><span class="o">=</span><span class="n">temperature_china</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="p">),</span>
+    <span class="n">text</span><span class="o">=</span><span class="n">co2_china</span><span class="p">[</span><span class="s1">&#39;z-score&#39;</span><span class="p">],</span>
+    <span class="n">hovertemplate</span><span class="o">=</span>
+    <span class="s1">&#39;&lt;b&gt;CO2: %</span><span class="si">{x}</span><span class="s1">&lt;/b&gt;&lt;br&gt;&#39;</span><span class="o">+</span>
+    <span class="s1">&#39;&lt;b&gt;Methane: %</span><span class="si">{y}</span><span class="s1">&lt;/b&gt;&lt;br&gt;&#39;</span><span class="o">+</span>
+    <span class="s1">&#39;&lt;b&gt;Temperature Z-Score: %</span><span class="si">{marker.size}</span><span class="s1">&lt;/b&gt;&lt;br&gt;&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">layout</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;CO2, Methane, and Temperature Z-Scores in China&#39;</span><span class="p">,</span>
+    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;CO2&#39;</span><span class="p">),</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Methane&#39;</span><span class="p">),</span>
+    <span class="n">hovermode</span><span class="o">=</span><span class="s1">&#39;closest&#39;</span><span class="p">,</span>
+    <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">l</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">r</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
+        <span class="n">t</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">b</span><span class="o">=</span><span class="mi">130</span> 
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">trace</span><span class="p">],</span> <span class="n">layout</span><span class="o">=</span><span class="n">layout</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">annotations</span><span class="o">=</span><span class="p">[</span>
+        <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Caption: Bubble chart showing the relationship between CO2 and Methane z-scores in China, with the size of the dots representing &lt;br&gt;&#39;</span><span class="o">+</span>
+            <span class="s1">&#39;the intensity of the Temperature Z-Scores. The blue dots represent a higher temperature than the purple dots, &lt;br&gt;&#39;</span><span class="o">+</span>
+            <span class="s1">&#39;indicating a relationship between higher temperatures and rising CO2 and methane levels.&#39;</span><span class="p">,</span>
+            <span class="n">xref</span><span class="o">=</span><span class="s1">&#39;paper&#39;</span><span class="p">,</span>
+            <span class="n">yref</span><span class="o">=</span><span class="s1">&#39;paper&#39;</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=-</span><span class="mf">0.42</span><span class="p">,</span>
+            <span class="n">showarrow</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+                <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+                <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">],</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> 
+    <span class="n">width</span><span class="o">=</span><span class="mi">1000</span>  
+<span class="p">)</span>
+
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="perspective-two">
+<h1>Perspective two<a class="headerlink" href="#perspective-two" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">co2_afghanistan</span> <span class="o">=</span> <span class="n">new_co2_dataframe</span><span class="p">[(</span><span class="n">new_co2_dataframe</span><span class="p">[</span><span class="s1">&#39;country_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Afghanistan&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">new_co2_dataframe</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1960</span><span class="p">,</span> <span class="mi">2023</span><span class="p">))]</span>
+<span class="n">methane_afghanistan</span> <span class="o">=</span> <span class="n">new_methane_dataframe</span><span class="p">[(</span><span class="n">new_methane_dataframe</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Afghanistan&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">new_methane_dataframe</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1960</span><span class="p">,</span> <span class="mi">2023</span><span class="p">))]</span>
+<span class="n">temperature_afghanistan</span> <span class="o">=</span> <span class="n">new_temperature_dataframe</span><span class="p">[(</span><span class="n">new_temperature_dataframe</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Afghanistan&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">new_temperature_dataframe</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">1960</span><span class="p">,</span> <span class="mi">2023</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">new_temperature_dataframe</span><span class="p">[</span><span class="s1">&#39;Months&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Meteorological year&#39;</span><span class="p">)]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">co2_afghanistan</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">co2_afghanistan</span><span class="p">[</span><span class="s1">&#39;z-score&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;CO2&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">methane_afghanistan</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">methane_afghanistan</span><span class="p">[</span><span class="s1">&#39;z-score&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Methane&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temperature_afghanistan</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">temperature_afghanistan</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Temperature&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Z-score&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Z-scores of CO2 and methane emissions and temperature change in Afghanistan&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/4c5c0da5982eae20d656e24be3f9e7cd0fb9aac36564c7fa95c8cb8392d47f9e.png" src="../_images/4c5c0da5982eae20d656e24be3f9e7cd0fb9aac36564c7fa95c8cb8392d47f9e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trace</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">co2_afghanistan</span><span class="p">[</span><span class="s1">&#39;z-score&#39;</span><span class="p">],</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">methane_afghanistan</span><span class="p">[</span><span class="s1">&#39;z-score&#39;</span><span class="p">],</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span>
+    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">size</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">temperature_afghanistan</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="n">sizemode</span><span class="o">=</span><span class="s1">&#39;diameter&#39;</span><span class="p">,</span>
+        <span class="n">sizeref</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">temperature_afghanistan</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">],</span>
+        <span class="n">colorscale</span><span class="o">=</span><span class="s1">&#39;Viridis&#39;</span><span class="p">,</span>
+        <span class="n">showscale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">cmin</span><span class="o">=</span><span class="n">temperature_afghanistan</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+        <span class="n">cmax</span><span class="o">=</span><span class="n">temperature_afghanistan</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="p">),</span>
+    <span class="n">text</span><span class="o">=</span><span class="n">co2_afghanistan</span><span class="p">[</span><span class="s1">&#39;z-score&#39;</span><span class="p">],</span>
+    <span class="n">hovertemplate</span><span class="o">=</span>
+    <span class="s1">&#39;&lt;b&gt;CO2: %</span><span class="si">{x}</span><span class="s1">&lt;/b&gt;&lt;br&gt;&#39;</span><span class="o">+</span>
+    <span class="s1">&#39;&lt;b&gt;Methane: %</span><span class="si">{y}</span><span class="s1">&lt;/b&gt;&lt;br&gt;&#39;</span><span class="o">+</span>
+    <span class="s1">&#39;&lt;b&gt;Temperature Z-Score: %</span><span class="si">{marker.size}</span><span class="s1">&lt;/b&gt;&lt;br&gt;&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">layout</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;CO2, Methane, and Temperature Z-Scores in Afghanistan&#39;</span><span class="p">,</span>
+    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;CO2&#39;</span><span class="p">),</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Methane&#39;</span><span class="p">),</span>
+    <span class="n">hovermode</span><span class="o">=</span><span class="s1">&#39;closest&#39;</span><span class="p">,</span>
+     <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">l</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">r</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
+        <span class="n">t</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">b</span><span class="o">=</span><span class="mi">130</span> 
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">trace</span><span class="p">],</span> <span class="n">layout</span><span class="o">=</span><span class="n">layout</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">annotations</span><span class="o">=</span><span class="p">[</span>
+        <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Caption: Bubble chart showing the relationship between CO2 and Methane z-scores in Afghanistan, with the size of the dots representing &lt;br&gt;&#39;</span><span class="o">+</span>
+            <span class="s1">&#39;the intensity of the Temperature Z-Scores. The green dots represent a higher temperature than the purple dots, &lt;br&gt;&#39;</span><span class="o">+</span>
+            <span class="s1">&#39;you can see big green dots in the lower left and upper right corners, &lt;br&gt;&#39;</span><span class="o">+</span>
+            <span class="s1">&#39;indicating that there is no relationship between higher temperatures and rising CO2 and methane levels.&#39;</span><span class="p">,</span>
+            <span class="n">xref</span><span class="o">=</span><span class="s1">&#39;paper&#39;</span><span class="p">,</span>
+            <span class="n">yref</span><span class="o">=</span><span class="s1">&#39;paper&#39;</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=-</span><span class="mf">0.4</span><span class="p">,</span>
+            <span class="n">showarrow</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+                <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+                <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">],</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> 
+    <span class="n">width</span><span class="o">=</span><span class="mi">1000</span>  
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="perspective-three">
+<h1>Perspective three<a class="headerlink" href="#perspective-three" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">CO2_elnino_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;CO2_merge_elnino_lanina.csv&#39;</span><span class="p">)</span>
 
 
 <span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">CO2_elnino_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Classification&#39;</span><span class="p">)</span>
@@ -967,8 +1608,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04360d5bb084935e32b165b797b05df0550a38ff90bb935c6945457d6b0aab81.png" src="../_images/04360d5bb084935e32b165b797b05df0550a38ff90bb935c6945457d6b0aab81.png" />
-<img alt="../_images/d487a7ec9659e943d4614e41f0bee2f4f903455cd3e294b87881476a0a094909.png" src="../_images/d487a7ec9659e943d4614e41f0bee2f4f903455cd3e294b87881476a0a094909.png" />
+<img alt="../_images/1f9da993af5a72cc86ad5d5b748b7995813041f4e83ff10cdf4d41cf006fedd9.png" src="../_images/1f9da993af5a72cc86ad5d5b748b7995813041f4e83ff10cdf4d41cf006fedd9.png" />
+<img alt="../_images/7b900ed94a0b43871179103d22b2fcbba9b12a720408f2866bb1dc433867590d.png" src="../_images/7b900ed94a0b43871179103d22b2fcbba9b12a720408f2866bb1dc433867590d.png" />
 </div>
 </div>
 <div class="toctree-wrapper compound">
@@ -1024,6 +1665,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Is it a climate disaster?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-and-preprocessing">Dataset and preprocessing</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perspective-one">Perspective one</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perspective-two">Perspective two</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perspective-three">Perspective three</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
