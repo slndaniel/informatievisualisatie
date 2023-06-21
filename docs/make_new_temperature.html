@@ -60,7 +60,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/merge_co2_elnino';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/make_new_temperature';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -204,7 +204,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/slndaniel/informatievisualisatie.git/blob/main/docs/docs/merge_co2_elnino.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/slndaniel/informatievisualisatie.git/blob/main/docs/docs/make_new_temperature.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -252,7 +252,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/slndaniel/informatievisualisatie.git/issues/new?title=Issue%20on%20page%20%2Fdocs/merge_co2_elnino.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/slndaniel/informatievisualisatie.git/issues/new?title=Issue%20on%20page%20%2Fdocs/make_new_temperature.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -282,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/docs/merge_co2_elnino.ipynb" target="_blank"
+      <li><a href="../_sources/docs/make_new_temperature.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -390,30 +390,25 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">co2_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;CO2_emissions_cleaned.csv&#39;</span><span class="p">)</span>
+<span class="n">temperature_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Temperature_change_cleaned.csv&#39;</span><span class="p">)</span>
+<span class="n">temperature_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">temperature_data</span><span class="p">)</span>
 
-<span class="n">elnino_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ElNino_LaNina_cleaned.csv&#39;</span><span class="p">)</span>
-
-<span class="n">merged_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">co2_df</span><span class="p">,</span> <span class="n">elnino_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
-
-<span class="n">merged_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;country_code&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">merged_df</span><span class="p">[</span><span class="s1">&#39;Classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-
-<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">merged_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">elnino_values</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Jan&#39;</span><span class="p">:</span><span class="s1">&#39;Dec&#39;</span><span class="p">]</span>
-    <span class="n">max_abs_value</span> <span class="o">=</span> <span class="n">elnino_values</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-    
-    <span class="k">if</span> <span class="n">max_abs_value</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">:</span>
-        <span class="n">max_value</span> <span class="o">=</span> <span class="n">elnino_values</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">max_value</span><span class="p">)</span> <span class="o">==</span> <span class="n">max_abs_value</span><span class="p">:</span>
-            <span class="n">merged_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;Classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2&#39;</span> <span class="c1">#elnino</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">merged_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;Classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span> <span class="c1">#lanina</span>
+<span class="n">df_melt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">temperature_dataframe</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Area Code&#39;</span><span class="p">,</span> <span class="s1">&#39;Area&#39;</span><span class="p">,</span> <span class="s1">&#39;Months Code&#39;</span><span class="p">,</span> <span class="s1">&#39;Months&#39;</span><span class="p">,</span> <span class="s1">&#39;Element Code&#39;</span><span class="p">,</span> <span class="s1">&#39;Element&#39;</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">],</span> <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;Temperature&#39;</span><span class="p">)</span>
+<span class="n">df_melt</span> <span class="o">=</span> <span class="n">df_melt</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Area&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">])</span>
+<span class="n">df_melt</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_melt</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">df_melt</span><span class="p">[</span><span class="s1">&#39;std&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_melt</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Element&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Standard Deviation&#39;</span><span class="p">:</span>
+        <span class="n">df_melt</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">merged_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;Classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span> <span class="c1">#neither</span>
+        <span class="n">df_melt</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_melt</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Temperature&#39;</span><span class="p">]</span>
+<span class="n">filtering</span> <span class="o">=</span> <span class="n">df_melt</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df_melt</span><span class="p">[</span><span class="n">df_melt</span><span class="p">[</span><span class="s1">&#39;Element&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Standard Deviation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
 
-<span class="n">merged_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;CO2_merge_elnino_lanina.csv&#39;</span><span class="p">)</span>
+<span class="n">filtering</span><span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">filtering</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Area&#39;</span><span class="p">,</span> <span class="s1">&#39;Months&#39;</span><span class="p">])[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">filtering</span><span class="p">[</span><span class="s1">&#39;z-score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">filtering</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">filtering</span><span class="p">[</span><span class="s1">&#39;Mean&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="n">filtering</span><span class="p">[</span><span class="s1">&#39;std&#39;</span><span class="p">]</span>
+<span class="n">filtering</span> <span class="o">=</span> <span class="n">filtering</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;Mean&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">filtering</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;new_temperature.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
