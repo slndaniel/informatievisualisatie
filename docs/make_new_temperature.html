@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>&lt;no title&gt; &#8212; Is it a climate disaster?</title>
   
   
@@ -405,6 +406,75 @@ document.write(`
 <span class="n">filtering</span> <span class="o">=</span> <span class="n">filtering</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;Mean&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">filtering</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;new_temperature.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">12</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_melt</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Element&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Standard Deviation&#39;</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">12</span>         <span class="n">df_melt</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>         <span class="n">df_melt</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_melt</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Temperature&#39;</span><span class="p">]</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\pandas\core\indexing.py:2430,</span> in <span class="ni">_AtIndexer.__setitem__</span><span class="nt">(self, key, value)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2427</span>     <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+<span class="g g-Whitespace">   </span><span class="mi">2428</span>     <span class="k">return</span>
+<span class="ne">-&gt; </span><span class="mi">2430</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\pandas\core\indexing.py:2386,</span> in <span class="ni">_ScalarAccessIndexer.__setitem__</span><span class="nt">(self, key, value)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2383</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ndim</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2384</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Not enough indexers for scalar access (setting)!&quot;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2386</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">_set_value</span><span class="p">(</span><span class="o">*</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span> <span class="n">takeable</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_takeable</span><span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\pandas\core\frame.py:4181,</span> in <span class="ni">DataFrame._set_value</span><span class="nt">(self, index, col, value, takeable)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4179</span>         <span class="n">icol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4180</span>         <span class="n">iindex</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">4181</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_mgr</span><span class="o">.</span><span class="n">column_setitem</span><span class="p">(</span><span class="n">icol</span><span class="p">,</span> <span class="n">iindex</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">inplace_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4182</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_clear_item_cache</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">4184</span> <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="n">LossySetitemError</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">4185</span>     <span class="c1"># get_loc might raise a KeyError for missing labels (falling back</span>
+<span class="g g-Whitespace">   </span><span class="mi">4186</span>     <span class="c1">#  to (i)loc will do expansion of the index)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4187</span>     <span class="c1"># column_setitem will do validation that may raise TypeError,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4188</span>     <span class="c1">#  ValueError, or LossySetitemError</span>
+<span class="g g-Whitespace">   </span><span class="mi">4189</span>     <span class="c1"># set using a non-recursive method &amp; reset the cache</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\pandas\core\internals\managers.py:1380,</span> in <span class="ni">BlockManager.column_setitem</span><span class="nt">(self, loc, idx, value, inplace_only)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1376</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_iset_split_block</span><span class="p">(</span><span class="n">blkno</span><span class="p">,</span> <span class="p">[</span><span class="n">blk_loc</span><span class="p">],</span> <span class="n">values</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1378</span> <span class="c1"># this manager is only created temporarily to mutate the values in place</span>
+<span class="g g-Whitespace">   </span><span class="mi">1379</span> <span class="c1"># so don&#39;t track references, otherwise the `setitem` would perform CoW again</span>
+<span class="ne">-&gt; </span><span class="mi">1380</span> <span class="n">col_mgr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">iget</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="n">track_ref</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1381</span> <span class="k">if</span> <span class="n">inplace_only</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1382</span>     <span class="n">col_mgr</span><span class="o">.</span><span class="n">setitem_inplace</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\pandas\core\internals\managers.py:1089,</span> in <span class="ni">BlockManager.iget</span><span class="nt">(self, i, track_ref)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1085</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1086</span><span class="sd"> Return the data as a SingleBlockManager.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1087</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1088</span> <span class="n">block</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">blocks</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">blknos</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+<span class="ne">-&gt; </span><span class="mi">1089</span> <span class="n">values</span> <span class="o">=</span> <span class="n">block</span><span class="o">.</span><span class="n">iget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">blklocs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="g g-Whitespace">   </span><span class="mi">1091</span> <span class="c1"># shortcut for select a single-dim from a 2-dim BM</span>
+<span class="g g-Whitespace">   </span><span class="mi">1092</span> <span class="n">bp</span> <span class="o">=</span> <span class="n">BlockPlacement</span><span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)))</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\pandas\core\internals\blocks.py:892,</span> in <span class="ni">Block.iget</span><span class="nt">(self, i)</span>
+<span class="g g-Whitespace">    </span><span class="mi">888</span> <span class="nd">@property</span>
+<span class="g g-Whitespace">    </span><span class="mi">889</span> <span class="k">def</span> <span class="nf">shape</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Shape</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">890</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span>
+<span class="ne">--&gt; </span><span class="mi">892</span> <span class="k">def</span> <span class="nf">iget</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">slice</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">893</span>     <span class="c1"># In the case where we have a tuple[slice, int], the slice will always</span>
+<span class="g g-Whitespace">    </span><span class="mi">894</span>     <span class="c1">#  be slice(None)</span>
+<span class="g g-Whitespace">    </span><span class="mi">895</span>     <span class="c1"># Note: only reached with self.ndim == 2</span>
+<span class="g g-Whitespace">    </span><span class="mi">896</span>     <span class="c1"># Invalid index type &quot;Union[int, Tuple[int, int], Tuple[slice, int]]&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">897</span>     <span class="c1"># for &quot;Union[ndarray[Any, Any], ExtensionArray]&quot;; expected type</span>
+<span class="g g-Whitespace">    </span><span class="mi">898</span>     <span class="c1"># &quot;Union[int, integer[Any]]&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">899</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="c1"># type: ignore[index]</span>
+<span class="g g-Whitespace">    </span><span class="mi">901</span> <span class="k">def</span> <span class="nf">_slice</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">902</span>     <span class="bp">self</span><span class="p">,</span> <span class="n">slicer</span><span class="p">:</span> <span class="nb">slice</span> <span class="o">|</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">bool_</span><span class="p">]</span> <span class="o">|</span> <span class="n">npt</span><span class="o">.</span><span class="n">NDArray</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">intp</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">903</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ArrayLike</span><span class="p">:</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
