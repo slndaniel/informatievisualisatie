@@ -1,0 +1,1104 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Is it a climate disaster?</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Datasets cleaning';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="data_story.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Is it a climate disaster?</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="data_story.html">
+                    Is it a climate disaster?
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/slndaniel/informatievisualisatie.git/blob/main/docs/docs/Datasets cleaning.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/slndaniel/informatievisualisatie.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/slndaniel/informatievisualisatie.git/issues/new?title=Issue%20on%20page%20%2Fdocs/Datasets cleaning.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/Datasets cleaning.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">file_path1</span> <span class="o">=</span> <span class="s1">&#39;Uncleaned datasets/Environment_Temperature_change_E_All_Data_NOFLAG.csv&#39;</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path1</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;unicode_escape&#39;</span><span class="p">)</span>
+<span class="n">dataframe1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
+<span class="n">dataframe1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Area Code</th>
+      <th>Area</th>
+      <th>Months Code</th>
+      <th>Months</th>
+      <th>Element Code</th>
+      <th>Element</th>
+      <th>Unit</th>
+      <th>Y1961</th>
+      <th>Y1962</th>
+      <th>Y1963</th>
+      <th>...</th>
+      <th>Y2010</th>
+      <th>Y2011</th>
+      <th>Y2012</th>
+      <th>Y2013</th>
+      <th>Y2014</th>
+      <th>Y2015</th>
+      <th>Y2016</th>
+      <th>Y2017</th>
+      <th>Y2018</th>
+      <th>Y2019</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2</td>
+      <td>Afghanistan</td>
+      <td>7001</td>
+      <td>January</td>
+      <td>7271</td>
+      <td>Temperature change</td>
+      <td>°C</td>
+      <td>0.777</td>
+      <td>0.062</td>
+      <td>2.744</td>
+      <td>...</td>
+      <td>3.601</td>
+      <td>1.179</td>
+      <td>-0.583</td>
+      <td>1.233</td>
+      <td>1.755</td>
+      <td>1.943</td>
+      <td>3.416</td>
+      <td>1.201</td>
+      <td>1.996</td>
+      <td>2.951</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Afghanistan</td>
+      <td>7001</td>
+      <td>January</td>
+      <td>6078</td>
+      <td>Standard Deviation</td>
+      <td>°C</td>
+      <td>1.950</td>
+      <td>1.950</td>
+      <td>1.950</td>
+      <td>...</td>
+      <td>1.950</td>
+      <td>1.950</td>
+      <td>1.950</td>
+      <td>1.950</td>
+      <td>1.950</td>
+      <td>1.950</td>
+      <td>1.950</td>
+      <td>1.950</td>
+      <td>1.950</td>
+      <td>1.950</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>Afghanistan</td>
+      <td>7002</td>
+      <td>February</td>
+      <td>7271</td>
+      <td>Temperature change</td>
+      <td>°C</td>
+      <td>-1.743</td>
+      <td>2.465</td>
+      <td>3.919</td>
+      <td>...</td>
+      <td>1.212</td>
+      <td>0.321</td>
+      <td>-3.201</td>
+      <td>1.494</td>
+      <td>-3.187</td>
+      <td>2.699</td>
+      <td>2.251</td>
+      <td>-0.323</td>
+      <td>2.705</td>
+      <td>0.086</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>Afghanistan</td>
+      <td>7002</td>
+      <td>February</td>
+      <td>6078</td>
+      <td>Standard Deviation</td>
+      <td>°C</td>
+      <td>2.597</td>
+      <td>2.597</td>
+      <td>2.597</td>
+      <td>...</td>
+      <td>2.597</td>
+      <td>2.597</td>
+      <td>2.597</td>
+      <td>2.597</td>
+      <td>2.597</td>
+      <td>2.597</td>
+      <td>2.597</td>
+      <td>2.597</td>
+      <td>2.597</td>
+      <td>2.597</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>Afghanistan</td>
+      <td>7003</td>
+      <td>March</td>
+      <td>7271</td>
+      <td>Temperature change</td>
+      <td>°C</td>
+      <td>0.516</td>
+      <td>1.336</td>
+      <td>0.403</td>
+      <td>...</td>
+      <td>3.390</td>
+      <td>0.748</td>
+      <td>-0.527</td>
+      <td>2.246</td>
+      <td>-0.076</td>
+      <td>-0.497</td>
+      <td>2.296</td>
+      <td>0.834</td>
+      <td>4.418</td>
+      <td>0.234</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 66 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path2</span> <span class="o">=</span> <span class="s1">&#39;Uncleaned datasets/co2_emissions_kt_by_country.csv&#39;</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path2</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;unicode_escape&#39;</span><span class="p">)</span>
+<span class="n">dataframe2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span>
+<span class="n">dataframe2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country_code</th>
+      <th>country_name</th>
+      <th>year</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ABW</td>
+      <td>Aruba</td>
+      <td>1960</td>
+      <td>11092.675</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ABW</td>
+      <td>Aruba</td>
+      <td>1961</td>
+      <td>11576.719</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ABW</td>
+      <td>Aruba</td>
+      <td>1962</td>
+      <td>12713.489</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ABW</td>
+      <td>Aruba</td>
+      <td>1963</td>
+      <td>12178.107</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ABW</td>
+      <td>Aruba</td>
+      <td>1964</td>
+      <td>11840.743</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path3</span> <span class="o">=</span> <span class="s1">&#39;Uncleaned datasets/ElNino.csv&#39;</span>
+<span class="n">data3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path3</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="n">dataframe3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data3</span><span class="p">)</span>
+<span class="n">dataframe3</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Season</th>
+      <th>JJA</th>
+      <th>JAS</th>
+      <th>ASO</th>
+      <th>SON</th>
+      <th>OND</th>
+      <th>NDJ</th>
+      <th>DJF</th>
+      <th>JFM</th>
+      <th>FMA</th>
+      <th>MAM</th>
+      <th>AMJ</th>
+      <th>MJJ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1950-1951</td>
+      <td>-0.5</td>
+      <td>-0.4</td>
+      <td>-0.4</td>
+      <td>-0.4</td>
+      <td>-0.6</td>
+      <td>-0.8</td>
+      <td>-0.8</td>
+      <td>-0.5</td>
+      <td>-0.2</td>
+      <td>0.2</td>
+      <td>0.4</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1951-1952</td>
+      <td>0.7</td>
+      <td>0.9</td>
+      <td>1.0</td>
+      <td>1.2</td>
+      <td>1.0</td>
+      <td>0.8</td>
+      <td>0.5</td>
+      <td>0.4</td>
+      <td>0.3</td>
+      <td>0.3</td>
+      <td>0.2</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1952-1953</td>
+      <td>-0.1</td>
+      <td>0.0</td>
+      <td>0.2</td>
+      <td>0.1</td>
+      <td>0.0</td>
+      <td>0.1</td>
+      <td>0.4</td>
+      <td>0.6</td>
+      <td>0.6</td>
+      <td>0.7</td>
+      <td>0.8</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1953-1954</td>
+      <td>0.7</td>
+      <td>0.7</td>
+      <td>0.8</td>
+      <td>0.8</td>
+      <td>0.8</td>
+      <td>0.8</td>
+      <td>0.8</td>
+      <td>0.5</td>
+      <td>0.0</td>
+      <td>-0.4</td>
+      <td>-0.5</td>
+      <td>-0.5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1954-1955</td>
+      <td>-0.6</td>
+      <td>-0.8</td>
+      <td>-0.9</td>
+      <td>-0.8</td>
+      <td>-0.7</td>
+      <td>-0.7</td>
+      <td>-0.7</td>
+      <td>-0.6</td>
+      <td>-0.7</td>
+      <td>-0.8</td>
+      <td>-0.8</td>
+      <td>-0.7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path4</span> <span class="o">=</span> <span class="s1">&#39;Uncleaned datasets/methane.csv&#39;</span>
+<span class="n">data4</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path4</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;unicode_escape&#39;</span><span class="p">)</span>
+<span class="n">dataframe4</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data4</span><span class="p">)</span>
+<span class="n">dataframe4</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>Country</th>
+      <th>Sector</th>
+      <th>Gas</th>
+      <th>Unit</th>
+      <th>2018</th>
+      <th>2017</th>
+      <th>2016</th>
+      <th>2015</th>
+      <th>2014</th>
+      <th>...</th>
+      <th>1999</th>
+      <th>1998</th>
+      <th>1997</th>
+      <th>1996</th>
+      <th>1995</th>
+      <th>1994</th>
+      <th>1993</th>
+      <th>1992</th>
+      <th>1991</th>
+      <th>1990</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>China</td>
+      <td>Total excluding LUCF</td>
+      <td>CH4</td>
+      <td>MTCO2e</td>
+      <td>1238.63</td>
+      <td>1239.13</td>
+      <td>1242.15</td>
+      <td>1237.52</td>
+      <td>1206.21</td>
+      <td>...</td>
+      <td>825.69</td>
+      <td>813.83</td>
+      <td>791.73</td>
+      <td>823.86</td>
+      <td>798.45</td>
+      <td>773.65</td>
+      <td>757.56</td>
+      <td>751.66</td>
+      <td>743.07</td>
+      <td>730.34</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>Russia</td>
+      <td>Total excluding LUCF</td>
+      <td>CH4</td>
+      <td>MTCO2e</td>
+      <td>849.57</td>
+      <td>850.17</td>
+      <td>852.55</td>
+      <td>835.56</td>
+      <td>830.22</td>
+      <td>...</td>
+      <td>598.70</td>
+      <td>597.72</td>
+      <td>610.38</td>
+      <td>622.22</td>
+      <td>639.73</td>
+      <td>666.92</td>
+      <td>724.72</td>
+      <td>780.89</td>
+      <td>863.52</td>
+      <td>929.97</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9</td>
+      <td>India</td>
+      <td>Total excluding LUCF</td>
+      <td>CH4</td>
+      <td>MTCO2e</td>
+      <td>666.51</td>
+      <td>661.61</td>
+      <td>657.69</td>
+      <td>652.00</td>
+      <td>653.67</td>
+      <td>...</td>
+      <td>584.49</td>
+      <td>577.29</td>
+      <td>567.46</td>
+      <td>560.74</td>
+      <td>551.49</td>
+      <td>543.90</td>
+      <td>539.00</td>
+      <td>533.31</td>
+      <td>528.53</td>
+      <td>522.74</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>11</td>
+      <td>United States</td>
+      <td>Total excluding LUCF</td>
+      <td>CH4</td>
+      <td>MTCO2e</td>
+      <td>622.59</td>
+      <td>614.50</td>
+      <td>609.20</td>
+      <td>617.17</td>
+      <td>620.81</td>
+      <td>...</td>
+      <td>688.34</td>
+      <td>702.98</td>
+      <td>722.83</td>
+      <td>738.60</td>
+      <td>745.84</td>
+      <td>758.52</td>
+      <td>751.48</td>
+      <td>768.67</td>
+      <td>769.82</td>
+      <td>766.55</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>15</td>
+      <td>Brazil</td>
+      <td>Total excluding LUCF</td>
+      <td>CH4</td>
+      <td>MTCO2e</td>
+      <td>416.28</td>
+      <td>421.66</td>
+      <td>424.80</td>
+      <td>422.28</td>
+      <td>416.35</td>
+      <td>...</td>
+      <td>322.94</td>
+      <td>318.14</td>
+      <td>311.06</td>
+      <td>304.62</td>
+      <td>311.55</td>
+      <td>311.16</td>
+      <td>305.47</td>
+      <td>304.56</td>
+      <td>300.17</td>
+      <td>285.24</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 34 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove all rows with empty values</span>
+<span class="n">df1_cleaned</span> <span class="o">=</span> <span class="n">dataframe1</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">df2_cleaned</span> <span class="o">=</span> <span class="n">dataframe2</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">df3_cleaned</span> <span class="o">=</span> <span class="n">dataframe3</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">df4_cleaned</span> <span class="o">=</span> <span class="n">dataframe4</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rename the columns to be more understandable</span>
+<span class="n">df3_cleaned</span> <span class="o">=</span> <span class="n">df3_cleaned</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;JJA&quot;</span><span class="p">:</span> <span class="s2">&quot;Jan&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;JAS&quot;</span><span class="p">:</span> <span class="s2">&quot;Feb&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;ASO&quot;</span><span class="p">:</span> <span class="s2">&quot;Mar&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;SON&quot;</span><span class="p">:</span> <span class="s2">&quot;Apr&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;OND&quot;</span><span class="p">:</span> <span class="s2">&quot;May&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;NDJ&quot;</span><span class="p">:</span> <span class="s2">&quot;Jun&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;DJF&quot;</span><span class="p">:</span> <span class="s2">&quot;Jul&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;JFM&quot;</span><span class="p">:</span> <span class="s2">&quot;Aug&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;FMA&quot;</span><span class="p">:</span> <span class="s2">&quot;Sep&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;MAM&quot;</span><span class="p">:</span> <span class="s2">&quot;Oct&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;AMJ&quot;</span><span class="p">:</span> <span class="s2">&quot;Nov&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;MJJ&quot;</span><span class="p">:</span> <span class="s2">&quot;Dec&quot;</span><span class="p">,})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove unnecessary column</span>
+<span class="n">df4_cleaned</span> <span class="o">=</span> <span class="n">df4_cleaned</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;Unnamed: 0&quot;</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change the years from year-year to just the one left of the -, so 1950-1951 becomes 1950.</span>
+<span class="n">df3_cleaned</span><span class="p">[</span><span class="s1">&#39;Season&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df3_cleaned</span><span class="p">[</span><span class="s1">&#39;Season&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">df3_cleaned</span> <span class="o">=</span> <span class="n">df3_cleaned</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Season&#39;</span><span class="p">:</span><span class="s1">&#39;year&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df1_cleaned</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;Temperature_change_cleaned.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">df2_cleaned</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;CO2_emissions_cleaned.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">df3_cleaned</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;ElNino_LaNina_cleaned.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">df4_cleaned</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;Methane_emissions_cleaned.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Group R1
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
