@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>&lt;no title&gt; &#8212; Is it a climate disaster?</title>
   
   
@@ -387,30 +386,30 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">co2_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;CO2_emissions_cleaned.csv&#39;</span><span class="p">)</span>
+<span class="n">co2_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;new_co2.csv&#39;</span><span class="p">)</span>
 
-<span class="n">elnino_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ElNino_LaNina_cleaned.csv&#39;</span><span class="p">)</span>
+<span class="n">elnino_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;new_elnino_lanina.csv&#39;</span><span class="p">)</span>
 
 <span class="n">merged_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">co2_df</span><span class="p">,</span> <span class="n">elnino_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
 
 <span class="n">merged_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;country_code&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="n">merged_df</span><span class="p">[</span><span class="s1">&#39;Classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="c1">#merged_df[&#39;Classification&#39;] = &#39;&#39;</span>
+<span class="c1">#</span>
+<span class="c1">#for index, row in merged_df.iterrows():</span>
+<span class="c1">#    elnino_values = row[&#39;Jan&#39;:&#39;Dec&#39;]</span>
+<span class="c1">#    max_abs_value = elnino_values.abs().max()</span>
+<span class="c1">#    </span>
+<span class="c1">#    if max_abs_value &gt;= 0.5:</span>
+<span class="c1">#        max_value = elnino_values.max()</span>
+<span class="c1">#        if abs(max_value) == max_abs_value:</span>
+<span class="c1">#            merged_df.at[index, &#39;Classification&#39;] = &#39;2&#39; #elnino</span>
+<span class="c1">#        else:</span>
+<span class="c1">#            merged_df.at[index, &#39;Classification&#39;] = &#39;0&#39; #lanina</span>
+<span class="c1">#    else:</span>
+<span class="c1">#        merged_df.at[index, &#39;Classification&#39;] = &#39;1&#39; #neither</span>
 
-<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">merged_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">elnino_values</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Jan&#39;</span><span class="p">:</span><span class="s1">&#39;Dec&#39;</span><span class="p">]</span>
-    <span class="n">max_abs_value</span> <span class="o">=</span> <span class="n">elnino_values</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-    
-    <span class="k">if</span> <span class="n">max_abs_value</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">:</span>
-        <span class="n">max_value</span> <span class="o">=</span> <span class="n">elnino_values</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">max_value</span><span class="p">)</span> <span class="o">==</span> <span class="n">max_abs_value</span><span class="p">:</span>
-            <span class="n">merged_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;Classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2&#39;</span> <span class="c1">#elnino</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">merged_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;Classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span> <span class="c1">#lanina</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">merged_df</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;Classification&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span> <span class="c1">#neither</span>
-
-<span class="n">merged_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;CO2_merge_elnino_lanina.csv&#39;</span><span class="p">)</span>
+<span class="n">merged_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;CO2_merge_elnino_lanina.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
