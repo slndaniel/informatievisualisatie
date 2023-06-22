@@ -1,48 +1,113 @@
 Traceback (most recent call last):
-  File "C:\Users\danie\miniconda3\envs\jupyterbook\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+  File "C:\Users\chris\miniconda3\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
     executenb(
-  File "C:\Users\danie\miniconda3\envs\jupyterbook\lib\site-packages\nbclient\client.py", line 1204, in execute
+  File "C:\Users\chris\miniconda3\lib\site-packages\nbclient\client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "C:\Users\danie\miniconda3\envs\jupyterbook\lib\site-packages\nbclient\util.py", line 84, in wrapped
-    return just_run(coro(*args, **kwargs))
-  File "C:\Users\danie\miniconda3\envs\jupyterbook\lib\site-packages\nbclient\util.py", line 62, in just_run
-    return loop.run_until_complete(coro)
-  File "C:\Users\danie\miniconda3\envs\jupyterbook\lib\asyncio\base_events.py", line 647, in run_until_complete
+  File "C:\Users\chris\miniconda3\lib\site-packages\jupyter_core\utils\__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+  File "C:\Users\chris\miniconda3\lib\asyncio\base_events.py", line 649, in run_until_complete
     return future.result()
-  File "C:\Users\danie\miniconda3\envs\jupyterbook\lib\site-packages\nbclient\client.py", line 663, in async_execute
+  File "C:\Users\chris\miniconda3\lib\site-packages\nbclient\client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "C:\Users\danie\miniconda3\envs\jupyterbook\lib\site-packages\nbclient\client.py", line 965, in async_execute_cell
+  File "C:\Users\chris\miniconda3\lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "C:\Users\danie\miniconda3\envs\jupyterbook\lib\site-packages\nbclient\client.py", line 862, in _check_raise_for_error
+  File "C:\Users\chris\miniconda3\lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-CO2_elnino_df = pd.read_csv('CO2_merge_elnino_lanina.csv')
+trace = go.Scatter(
+    x=co2_china['z-score'],
+    y=methane_china['z-score'],
+    mode='markers',
+    marker=dict(
+        size=abs(temperature_china['Temperature']) * 10,
+        sizemode='diameter',
+        sizeref=0.1,
+        color=temperature_china['Temperature'],
+        colorscale='Viridis',
+        showscale=True,
+        cmin=temperature_china['Temperature'].min(),
+        cmax=temperature_china['Temperature'].max()
+    ),
+    text=co2_china['z-score'],
+    hovertemplate=
+    '<b>CO2: %{x}</b><br>'+
+    '<b>Methane: %{y}</b><br>'+
+    '<b>Temperature Z-Score: %{marker.size}</b><br>',
+)
+
+layout = go.Layout(
+    title='CO2, Methane, and Temperature Z-Scores in China',
+    xaxis=dict(title='CO2'),
+    yaxis=dict(title='Methane'),
+    hovermode='closest',
+    margin=dict(
+        l=100,
+        r=80,
+        t=100,
+        b=130 
+    )
+)
+
+fig = go.Figure(data=[trace], layout=layout)
+
+fig.update_layout(
+    annotations=[
+        dict(
+            text='Caption: Bubble chart showing the relationship between CO2 and Methane z-scores in China, <br>'+ 
+            'with the size of the dots representing the intensity of the Temperature Z-Scores. <br>'+
+            'The blue dots represent a higher temperature than the purple dots, <br>'+
+            'indicating a relationship between higher temperatures and rising CO2 and methane levels.',
+            xref='paper',
+            yref='paper',
+            x=0,
+            y=-0.42,
+            showarrow=False,
+            font=dict(
+                size=12,
+                color='black'
+            )
+        )
+    ],
+    height=500, 
+    width=780  
+)
 
 
-sns.lmplot(data=CO2_elnino_df, x='value', y='Classification')
-plt.yticks([0, 1, 2], ['La Nina', 'Neither', 'El Nino'])
-plt.xlabel('Value')
-plt.ylabel('Classification')
-plt.title('Linear Regression: Value vs. Classification')
-plt.show()
-
-sns.lmplot(data=CO2_elnino_df, x='year', y='Classification')
-plt.yticks([0, 1, 2], ['La Nina', 'Neither', 'El Nino'])
-plt.xlabel('year')
-plt.ylabel('Classification')
-plt.title('Linear Regression: Value vs. Classification')
-plt.show()
+fig.show()
 ------------------
+
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mNameError[0m                                 Traceback (most recent call last)
-Cell [1;32mIn[14], line 4[0m
-[0;32m      1[0m CO2_elnino_df [38;5;241m=[39m pd[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124mCO2_merge_elnino_lanina.csv[39m[38;5;124m'[39m)
-[1;32m----> 4[0m [43msns[49m[38;5;241m.[39mlmplot(data[38;5;241m=[39mCO2_elnino_df, x[38;5;241m=[39m[38;5;124m'[39m[38;5;124mvalue[39m[38;5;124m'[39m, y[38;5;241m=[39m[38;5;124m'[39m[38;5;124mClassification[39m[38;5;124m'[39m)
-[0;32m      5[0m plt[38;5;241m.[39myticks([[38;5;241m0[39m, [38;5;241m1[39m, [38;5;241m2[39m], [[38;5;124m'[39m[38;5;124mLa Nina[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mNeither[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mEl Nino[39m[38;5;124m'[39m])
-[0;32m      6[0m plt[38;5;241m.[39mxlabel([38;5;124m'[39m[38;5;124mValue[39m[38;5;124m'[39m)
+Cell [1;32mIn[11], line 2[0m
+[0;32m      1[0m trace [38;5;241m=[39m go[38;5;241m.[39mScatter(
+[1;32m----> 2[0m     x[38;5;241m=[39m[43mco2_china[49m[[38;5;124m'[39m[38;5;124mz-score[39m[38;5;124m'[39m],
+[0;32m      3[0m     y[38;5;241m=[39mmethane_china[[38;5;124m'[39m[38;5;124mz-score[39m[38;5;124m'[39m],
+[0;32m      4[0m     mode[38;5;241m=[39m[38;5;124m'[39m[38;5;124mmarkers[39m[38;5;124m'[39m,
+[0;32m      5[0m     marker[38;5;241m=[39m[38;5;28mdict[39m(
+[0;32m      6[0m         size[38;5;241m=[39m[38;5;28mabs[39m(temperature_china[[38;5;124m'[39m[38;5;124mTemperature[39m[38;5;124m'[39m]) [38;5;241m*[39m [38;5;241m10[39m,
+[0;32m      7[0m         sizemode[38;5;241m=[39m[38;5;124m'[39m[38;5;124mdiameter[39m[38;5;124m'[39m,
+[0;32m      8[0m         sizeref[38;5;241m=[39m[38;5;241m0.1[39m,
+[0;32m      9[0m         color[38;5;241m=[39mtemperature_china[[38;5;124m'[39m[38;5;124mTemperature[39m[38;5;124m'[39m],
+[0;32m     10[0m         colorscale[38;5;241m=[39m[38;5;124m'[39m[38;5;124mViridis[39m[38;5;124m'[39m,
+[0;32m     11[0m         showscale[38;5;241m=[39m[38;5;28;01mTrue[39;00m,
+[0;32m     12[0m         cmin[38;5;241m=[39mtemperature_china[[38;5;124m'[39m[38;5;124mTemperature[39m[38;5;124m'[39m][38;5;241m.[39mmin(),
+[0;32m     13[0m         cmax[38;5;241m=[39mtemperature_china[[38;5;124m'[39m[38;5;124mTemperature[39m[38;5;124m'[39m][38;5;241m.[39mmax()
+[0;32m     14[0m     ),
+[0;32m     15[0m     text[38;5;241m=[39mco2_china[[38;5;124m'[39m[38;5;124mz-score[39m[38;5;124m'[39m],
+[0;32m     16[0m     hovertemplate[38;5;241m=[39m
+[0;32m     17[0m     [38;5;124m'[39m[38;5;124m<b>CO2: [39m[38;5;124m%[39m[38;5;132;01m{x}[39;00m[38;5;124m</b><br>[39m[38;5;124m'[39m[38;5;241m+[39m
+[0;32m     18[0m     [38;5;124m'[39m[38;5;124m<b>Methane: [39m[38;5;124m%[39m[38;5;132;01m{y}[39;00m[38;5;124m</b><br>[39m[38;5;124m'[39m[38;5;241m+[39m
+[0;32m     19[0m     [38;5;124m'[39m[38;5;124m<b>Temperature Z-Score: [39m[38;5;124m%[39m[38;5;132;01m{marker.size}[39;00m[38;5;124m</b><br>[39m[38;5;124m'[39m,
+[0;32m     20[0m )
+[0;32m     22[0m layout [38;5;241m=[39m go[38;5;241m.[39mLayout(
+[0;32m     23[0m     title[38;5;241m=[39m[38;5;124m'[39m[38;5;124mCO2, Methane, and Temperature Z-Scores in China[39m[38;5;124m'[39m,
+[0;32m     24[0m     xaxis[38;5;241m=[39m[38;5;28mdict[39m(title[38;5;241m=[39m[38;5;124m'[39m[38;5;124mCO2[39m[38;5;124m'[39m),
+[1;32m   (...)[0m
+[0;32m     32[0m     )
+[0;32m     33[0m )
+[0;32m     35[0m fig [38;5;241m=[39m go[38;5;241m.[39mFigure(data[38;5;241m=[39m[trace], layout[38;5;241m=[39mlayout)
 
-[1;31mNameError[0m: name 'sns' is not defined
-NameError: name 'sns' is not defined
+[1;31mNameError[0m: name 'co2_china' is not defined
 
