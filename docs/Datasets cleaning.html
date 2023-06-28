@@ -385,8 +385,13 @@ document.write(`
   <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">file_path1</span> <span class="o">=</span> <span class="s1">&#39;Uncleaned datasets/Environment_Temperature_change_E_All_Data_NOFLAG.csv&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path1</span> <span class="o">=</span> <span class="s1">&#39;Uncleaned datasets/Environment_Temperature_change_E_All_Data_NOFLAG.csv&#39;</span>
 <span class="n">data1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path1</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;unicode_escape&#39;</span><span class="p">)</span>
 <span class="n">dataframe1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
 <span class="n">dataframe1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -993,6 +998,108 @@ document.write(`
 <span class="n">df2_cleaned</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;CO2_emissions_cleaned.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">df3_cleaned</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;ElNino_LaNina_cleaned.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">df4_cleaned</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;Methane_emissions_cleaned.csv&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">long_lat_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;world_country_and_usa_states_latitude_and_longitude_values.csv&#39;</span><span class="p">)</span>
+<span class="n">long_lat_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">long_lat_data</span><span class="p">)</span>
+<span class="n">long_lat_dataframe</span> <span class="o">=</span> <span class="n">long_lat_dataframe</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;country_code&#39;</span><span class="p">,</span> <span class="s1">&#39;usa_state_code&#39;</span><span class="p">,</span> <span class="s1">&#39;usa_state_latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;usa_state_longitude&#39;</span><span class="p">,</span> <span class="s1">&#39;usa_state&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">long_lat_dataframe</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;new_long_lat.csv&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">long_lat_dataframe</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      latitude  longitude               country
+0    42.546245   1.601554               Andorra
+1    23.424076  53.847818  United Arab Emirates
+2    33.939110  67.709953           Afghanistan
+3    17.060816 -61.796428   Antigua and Barbuda
+4    18.220554 -63.068615              Anguilla
+..         ...        ...                   ...
+240  15.552727  48.516388                 Yemen
+241 -12.827500  45.166244               Mayotte
+242 -30.559482  22.937506          South Africa
+243 -13.133897  27.849332                Zambia
+244 -19.015438  29.154857              Zimbabwe
+
+[245 rows x 3 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">co2_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;new_co2.csv&#39;</span><span class="p">))</span>
+<span class="n">methane_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;new_methane.csv&#39;</span><span class="p">))</span>
+<span class="n">temperature_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;new_temperature.csv&#39;</span><span class="p">))</span>
+<span class="n">elnino_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;new_elnino_lanina.csv&#39;</span><span class="p">))</span>
+<span class="n">long_let_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;new_long_lat.csv&#39;</span><span class="p">))</span>
+
+<span class="n">co2_df</span> <span class="o">=</span> <span class="n">co2_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;country_name&#39;</span><span class="p">:</span><span class="s1">&#39;Country&#39;</span><span class="p">})</span>
+<span class="n">co2_df</span> <span class="o">=</span> <span class="n">co2_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;year&#39;</span><span class="p">:</span><span class="s1">&#39;Year&#39;</span><span class="p">})</span>
+
+<span class="n">all_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">co2_df</span><span class="p">,</span> <span class="n">methane_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<span class="n">all_data</span> <span class="o">=</span> <span class="n">all_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;country_code&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">all_data</span> <span class="o">=</span> <span class="n">all_data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;z-score_x&#39;</span><span class="p">:</span><span class="s1">&#39;z-score-co2&#39;</span><span class="p">})</span>
+<span class="n">all_data</span> <span class="o">=</span> <span class="n">all_data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;z-score_y&#39;</span><span class="p">:</span><span class="s1">&#39;z-score-methane&#39;</span><span class="p">})</span>
+<span class="n">all_data</span> <span class="o">=</span> <span class="n">all_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;Methane value&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">only_meteorogical_df</span> <span class="o">=</span> <span class="n">temperature_df</span><span class="p">[</span><span class="n">temperature_df</span><span class="p">[</span><span class="s1">&#39;Months&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Meteorological year&#39;</span><span class="p">]</span>
+<span class="n">only_meteorogical_df</span> <span class="o">=</span> <span class="n">only_meteorogical_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Area&#39;</span><span class="p">:</span><span class="s1">&#39;Country&#39;</span><span class="p">})</span>
+
+<span class="n">all_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">all_data</span><span class="p">,</span> <span class="n">only_meteorogical_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<span class="n">all_data</span> <span class="o">=</span> <span class="n">all_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Area Code&#39;</span><span class="p">,</span> <span class="s1">&#39;Months Code&#39;</span><span class="p">,</span> <span class="s1">&#39;Months&#39;</span><span class="p">,</span> <span class="s1">&#39;Element Code&#39;</span><span class="p">,</span> <span class="s1">&#39;Element&#39;</span><span class="p">,</span> <span class="s1">&#39;Unit&#39;</span><span class="p">,</span> <span class="s1">&#39;z-score&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">elnino_df</span> <span class="o">=</span> <span class="n">elnino_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;year&#39;</span><span class="p">:</span><span class="s1">&#39;Year&#39;</span><span class="p">})</span>
+<span class="n">all_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">all_data</span><span class="p">,</span> <span class="n">elnino_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<span class="n">all_data</span> <span class="o">=</span> <span class="n">all_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">all_data</span> <span class="o">=</span> <span class="n">all_data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;z-score&#39;</span><span class="p">:</span><span class="s1">&#39;z-score-elnino-lanina&#39;</span><span class="p">})</span>
+
+<span class="n">long_let_df</span> <span class="o">=</span> <span class="n">long_let_df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;country&#39;</span><span class="p">:</span><span class="s1">&#39;Country&#39;</span><span class="p">})</span>
+<span class="n">all_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">all_data</span><span class="p">,</span> <span class="n">long_let_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<span class="n">all_data</span> <span class="o">=</span> <span class="n">all_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">all_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;all_data_and_long_lat.csv&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">all_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           Country  Year  z-score-co2  z-score-methane  Temperature  \
+0      Afghanistan  1990    -0.063410        -0.722564        0.766   
+1      Afghanistan  1991    -0.139131        -0.718711       -0.178   
+2      Afghanistan  1992    -0.563172        -0.721793       -0.320   
+3      Afghanistan  1993    -0.588413        -0.725647        0.172   
+4      Afghanistan  1994    -0.613653        -0.722950        0.423   
+...            ...   ...          ...              ...          ...   
+3243  South Africa  2014     1.565481         0.787660        0.805   
+3244  South Africa  2015     1.352478         0.775594        1.348   
+3245  South Africa  2016     1.355518         0.745427        1.638   
+3246  South Africa  2017     1.452346         0.905310        1.125   
+3247  South Africa  2018     1.440369         0.950560        1.047   
+
+      z-score-elnino-lanina   latitude  longitude  
+0                  0.397634  33.939110  67.709953  
+1                  1.326618  33.939110  67.709953  
+2                  0.482087  33.939110  67.709953  
+3                  0.228727  33.939110  67.709953  
+4                  0.819899  33.939110  67.709953  
+...                     ...        ...        ...  
+3243               0.904352 -30.559482  22.937506  
+3244               2.086696 -30.559482  22.937506  
+3245              -0.700257 -30.559482  22.937506  
+3246              -0.953617 -30.559482  22.937506  
+3247               0.650993 -30.559482  22.937506  
+
+[3248 rows x 8 columns]
 </pre></div>
 </div>
 </div>
