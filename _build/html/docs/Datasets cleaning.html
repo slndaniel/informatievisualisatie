@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>&lt;no title&gt; &#8212; Is it a climate disaster?</title>
   
   
@@ -1066,25 +1067,25 @@ document.write(`
 <span class="n">all_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">all_data</span><span class="p">,</span> <span class="n">long_let_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
 <span class="n">all_data</span> <span class="o">=</span> <span class="n">all_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Unnamed: 0&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">all_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;all_data_and_long_lat.csv&#39;</span><span class="p">)</span>
+<span class="n">all_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;all_data_and_long_lat.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">all_data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           Country  Year  z-score-co2  z-score-methane  Temperature  \
-0      Afghanistan  1990    -0.063410        -0.722564        0.766   
-1      Afghanistan  1991    -0.139131        -0.718711       -0.178   
-2      Afghanistan  1992    -0.563172        -0.721793       -0.320   
-3      Afghanistan  1993    -0.588413        -0.725647        0.172   
-4      Afghanistan  1994    -0.613653        -0.722950        0.423   
-...            ...   ...          ...              ...          ...   
-3243  South Africa  2014     1.565481         0.787660        0.805   
-3244  South Africa  2015     1.352478         0.775594        1.348   
-3245  South Africa  2016     1.355518         0.745427        1.638   
-3246  South Africa  2017     1.452346         0.905310        1.125   
-3247  South Africa  2018     1.440369         0.950560        1.047   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          Country  Year  z-score-co2  z-score-methane  Temperature  \
+0     Afghanistan  1990    -0.063410        -0.722564        0.766   
+1     Afghanistan  1991    -0.139131        -0.718711       -0.178   
+2     Afghanistan  1992    -0.563172        -0.721793       -0.320   
+3     Afghanistan  1993    -0.588413        -0.725647        0.172   
+4     Afghanistan  1994    -0.613653        -0.722950        0.423   
+...           ...   ...          ...              ...          ...   
+3301     Zimbabwe  2014     0.269403         0.162317        0.291   
+3302     Zimbabwe  2015     0.372515         1.174731        1.091   
+3303     Zimbabwe  2016    -0.042880         0.746803        1.303   
+3304     Zimbabwe  2017    -0.243213         0.934674        0.269   
+3305     Zimbabwe  2018     0.357785         1.237354        0.496   
 
       z-score-elnino-lanina   latitude  longitude  
 0                  0.397634  33.939110  67.709953  
@@ -1093,13 +1094,13 @@ document.write(`
 3                  0.228727  33.939110  67.709953  
 4                  0.819899  33.939110  67.709953  
 ...                     ...        ...        ...  
-3243               0.904352 -30.559482  22.937506  
-3244               2.086696 -30.559482  22.937506  
-3245              -0.700257 -30.559482  22.937506  
-3246              -0.953617 -30.559482  22.937506  
-3247               0.650993 -30.559482  22.937506  
+3301               0.904352 -19.015438  29.154857  
+3302               2.086696 -19.015438  29.154857  
+3303              -0.700257 -19.015438  29.154857  
+3304              -0.953617 -19.015438  29.154857  
+3305               0.650993 -19.015438  29.154857  
 
-[3248 rows x 8 columns]
+[3306 rows x 8 columns]
 </pre></div>
 </div>
 </div>
